@@ -1,32 +1,16 @@
-# _Sample project_
+# _WiFi Scanning Project_
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+This project demonstrates how to scan for WiFi networks using the ESP32-S3. It saves the scanned networks to NVS (Non-Volatile Storage) and loads them on startup.
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+## Running the example
 
+1. Set up the ESP-IDF environment by following the [ESP-IDF getting started guide](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html).
+2. Clone this project and navigate to its directory.
+3. Run `idf.py set-target esp32s3` to set the target to ESP32-S3.
+4. Run `idf.py menuconfig` to configure the project.
+5. Run `idf.py build` to build the project.
+6. Run `idf.py flash` to flash the project to your ESP32-S3 board.
+7. Run `idf.py monitor` to view the output from the ESP32-S3.
 
+The device will scan for WiFi networks every 5 seconds and save any new networks to NVS. The saved networks will be loaded and displayed on startup.
 
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
-
-## Example folder contents
-
-The project **sample_project** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
-
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
-files that provide set of directives and instructions describing the project's source files and targets
-(executable, library, or both). 
-
-Below is short explanation of remaining files in the project folder.
-
-```
-├── CMakeLists.txt
-├── main
-│   ├── CMakeLists.txt
-│   └── main.c
-└── README.md                  This is the file you are currently reading
-```
-Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
-They are not used or needed when building with CMake and idf.py.
